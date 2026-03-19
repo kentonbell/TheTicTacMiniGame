@@ -1,0 +1,63 @@
+//
+//  ContentView.swift
+//  TheMiniTinyChallenge
+//
+//  Created by Kenton Bell on 9/25/25.
+//
+
+import SwiftUI
+
+struct GameView: View {
+    
+    private var paddingAmount: CGFloat = 20
+    
+    @State private var userInput: String = ""   // holds text box input
+    @State private var outputText: String = " "  // holds result
+    
+    var body: some View {
+        VStack (spacing: 30){
+            
+            Text("The \nMini \nTiny \nChallenge")
+                .font(Font.largeTitle)
+                .bold()
+            
+            Text(outputText)
+                
+            
+            
+            TextField("Enter text here", text: $userInput)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding(paddingAmount)
+            Button("Process"){ //this is what happens when you press the button
+                outputText = processInput(userInput)
+            }
+            .buttonStyle(.borderedProminent)
+            .padding(paddingAmount)
+            
+            .padding(paddingAmount)
+            
+            
+        }
+        .padding(paddingAmount)
+    }
+    
+    
+    
+    // Replace this with your scanner logic rewritten in Swift
+        func processInput(_ input: String) -> String {
+            // Example: mirror what your Java Scanner logic does
+            return "You entered: \(input)"
+        }
+    
+    
+} //end of content view
+
+
+
+
+
+#Preview {
+   GameView()
+}
+
+

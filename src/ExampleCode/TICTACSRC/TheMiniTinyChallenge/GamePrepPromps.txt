@@ -1,0 +1,13 @@
+//
+//  GamePrepPromps.json
+//  TheMiniTinyChallenge
+//
+//  Created by Kenton Bell on 9/26/25.
+//
+
+[
+  { "id": 1, "prompt": "How many your name" },
+  { "id": 2, "prompt": "Enter your age" },
+  { "id": 3, "prompt": "Enter your favorite color" },
+  { "id": 4, "prompt": "Enter your hometown" }
+]

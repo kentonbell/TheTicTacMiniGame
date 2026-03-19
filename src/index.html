@@ -1,14 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tic-Tac Mini Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-  <h1>The TicTac Mini Game</h1>
+  <div class="app-container">
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen">
+      <div class="welcome-content">
+        <h1 class="title-gradient">The Tic-Tac Mini Game</h1>
+        <p class="subtitle">Win the game within the game</p>
+        
+        <div class="setup-section">
+          <div class="form-group">
+            <label for="player-count">Number of Players</label>
+            <div class="button-group">
+              <button class="player-btn" data-players="1">1 Player (vs CPU)</button>
+              <button class="player-btn" data-players="2">2 Players</button>
+            </div>
+          </div>
 
-  <div id="menu">
-    <button onclick="start('tictactoe')">TicTacToe</button>
-    <button onclick="start('connect4')">Connect 4</button>
-    <button onclick="start('dotsboxes')">Dots & Boxes</button>
-    <button onclick="start('anagrams')">Word Game</button>
+          <div class="form-group">
+            <label for="board-size">Board Size</label>
+            <div class="button-group">
+              <button class="size-btn" data-size="3">3×3</button>
+              <button class="size-btn" data-size="4">4×4</button>
+              <button class="size-btn" data-size="5">5×5</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="difficulty">Difficulty Level</label>
+            <div class="button-group">
+              <button class="difficulty-btn" data-difficulty="1">Easy</button>
+              <button class="difficulty-btn" data-difficulty="2">Medium</button>
+              <button class="difficulty-btn" data-difficulty="3">Hard</button>
+              <button class="difficulty-btn" data-difficulty="4">Implausible</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="player-name">Player 1 Name</label>
+            <input type="text" id="player-name" placeholder="Enter your name" value="Player 1">
+          </div>
+
+          <button id="start-game-btn" class="btn-primary btn-large">Start Game</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen hidden">
+      <div class="game-header">
+        <div class="score-display">
+          <span class="player-info">
+            <span class="current-symbol" id="current-symbol-display"></span>
+            <span id="current-player-display"></span>'s Turn
+          </span>
+          <div class="score-board">
+            <div class="score-item">
+              <span id="player-x-name">X</span>: <span id="player-x-score">0</span>
+            </div>
+            <div class="score-item">
+              <span id="player-o-name">O</span>: <span id="player-o-score">0</span>
+            </div>
+          </div>
+        </div>
+        <button id="quit-btn" class="btn-secondary">Quit Game</button>
+      </div>
+
+      <div class="game-board-container">
+        <div class="game-board" id="game-board"></div>
+      </div>
+
+      <div class="game-info">
+        <p id="game-status-text">Waiting for move...</p>
+      </div>
+    </div>
+
+    <!-- Mini Game Screen -->
+    <div id="mini-game-screen" class="screen hidden">
+      <div class="mini-game-header">
+        <button id="back-from-minigame" class="btn-secondary">Back</button>
+        <h2 id="mini-game-title">Mini Game</h2>
+        <div id="mini-game-info"></div>
+      </div>
+
+      <!-- TicTacToe Mini Game -->
+      <div id="minigame-tictactoe" class="mini-game hidden">
+        <div class="mini-board" id="mini-board-tictactoe"></div>
+      </div>
+
+      <!-- Wordle Mini Game -->
+      <div id="minigame-wordle" class="mini-game hidden">
+        <div class="wordle-container">
+          <p id="wordle-hint">Guess the 5-letter word!</p>
+          <div id="wordle-feedback"></div>
+          <input type="text" id="wordle-input" placeholder="Enter a 5-letter word" maxlength="5">
+          <button id="wordle-submit" class="btn-primary">Guess</button>
+          <p id="wordle-status"></p>
+        </div>
+      </div>
+
+      <!-- Geography Mini Game -->
+      <div id="minigame-geography" class="mini-game hidden">
+        <div class="geography-container">
+          <h3 id="geography-category">Name countries in...</h3>
+          <p id="geography-progress"></p>
+          <input type="text" id="geography-input" placeholder="Enter a country or capital">
+          <button id="geography-submit" class="btn-primary">Submit</button>
+          <p id="geography-feedback"></p>
+        </div>
+      </div>
+
+      <!-- Word Scramble Mini Game -->
+      <div id="minigame-wordscramble" class="mini-game hidden">
+        <div class="wordscramble-container">
+          <p class="scrambled-word" id="scrambled-word"></p>
+          <input type="text" id="wordscramble-input" placeholder="Unscramble the word">
+          <button id="wordscramble-submit" class="btn-primary">Submit</button>
+          <p id="wordscramble-status"></p>
+        </div>
+      </div>
+
+      <!-- Dots & Boxes Mini Game -->
+      <div id="minigame-dotsboxes" class="mini-game hidden">
+        <div class="dotsboxes-container">
+          <div id="dotsboxes-grid" class="dots-grid"></div>
+          <p id="dotsboxes-status"></p>
+        </div>
+      </div>
+
+      <!-- Connect Four Mini Game -->
+      <div id="minigame-connect4" class="mini-game hidden">
+        <div class="connect4-container">
+          <div id="connect4-board" class="connect4-board"></div>
+          <div class="connect4-controls">
+            <button class="drop-btn" type="button" onclick="dropPiece(0)">↓</button>
+            <button class="drop-btn" type="button" onclick="dropPiece(1)">↓</button>
+            <button class="drop-btn" type="button" onclick="dropPiece(2)">↓</button>
+            <button class="drop-btn" type="button" onclick="dropPiece(3)">↓</button>
+            <button class="drop-btn" type="button" onclick="dropPiece(4)">↓</button>
+            <button class="drop-btn" type="button" onclick="dropPiece(5)">↓</button>
+            <button class="drop-btn" type="button" onclick="dropPiece(6)">↓</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Math Mini Game -->
+      <div id="minigame-math" class="mini-game hidden">
+        <div class="math-container">
+          <p class="math-question" id="math-question"></p>
+          <input type="number" id="math-input" placeholder="Enter your answer">
+          <button id="math-submit" class="btn-primary">Submit</button>
+          <p id="math-status"></p>
+        </div>
+      </div>
+
+      <!-- Trivia Mini Game -->
+      <div id="minigame-trivia" class="mini-game hidden">
+        <div class="trivia-container">
+          <p class="trivia-question" id="trivia-question"></p>
+          <div class="trivia-options" id="trivia-options"></div>
+          <p id="trivia-status"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameover-screen" class="screen hidden">
+      <div class="gameover-content">
+        <h2 id="gameover-title">Game Over!</h2>
+        <div class="gameover-stats">
+          <p id="gameover-winner"></p>
+          <div class="final-scores">
+            <div class="score-item">
+              <span id="final-x-name">X</span>: <span id="final-x-score">0</span>
+            </div>
+            <div class="score-item">
+              <span id="final-o-name">O</span>: <span id="final-o-score">0</span>
+            </div>
+          </div>
+        </div>
+        <div class="gameover-buttons">
+          <button id="play-again-btn" class="btn-primary btn-large">Play Again</button>
+          <button id="main-menu-btn" class="btn-secondary btn-large">Main Menu</button>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div id="game"></div>
 
   <script src="main.js"></script>
 </body>
+</html>
