@@ -1,11 +1,11 @@
 :root {
-  --color-primary: #8eff6b;
-  --color-secondary: #4ECDC4;
-  --color-accent: #FFE66D;
+  --color-primary: #22311d;
+  --color-secondary: #93f1eb;
+  --color-accent: #f8efc5;
   --color-dark: #1a1a2e;
-  --color-light: #f0f0f0;
-  --color-x: #FF6B6B;
-  --color-o: #4ECDC4;
+  --color-light: #d4c0c0;
+  --color-x: #686546;
+  --color-o: #397773;
   --glass-bg: rgba(255, 255, 255, 0.1);
   --glass-border: rgba(255, 255, 255, 0.2);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
