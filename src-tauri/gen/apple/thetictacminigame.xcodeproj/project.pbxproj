@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		201C7307E6A19D0CF3A86635 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 141444015346EAD447F2A8D3 /* CoreGraphics.framework */; };
+		34A89C7DFDAC09E284AABBAD /* libapp.a in Resources */ = {isa = PBXBuildFile; fileRef = D4E8D18BF34B638D1A00D80C /* libapp.a */; };
+		374C5264962A119693FD526B /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 28196E99E17FA2298E4FB498 /* assets */; };
+		4058B058CB08D56722B367D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAAF4886A7628ADECD2D7DD /* UIKit.framework */; };
+		51DCB0B717D75FFAEF11DB76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A06EE552F38F3225327291FC /* LaunchScreen.storyboard */; };
+		5609D0CD48BD0A180E6B7D4B /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 768DD8893A09C1666FA86863 /* main.mm */; };
+		A740EAA52424DE59752B8F91 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE51E85681EB5CCF7ED0D977 /* WebKit.framework */; };
+		ADF7A2170814F93C4B5D3B03 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E405BC0BE98847C57F5CD3 /* MetalKit.framework */; };
+		C8B844DA1423718A26AF08AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86920C4B00C26DA1CF8F495 /* QuartzCore.framework */; };
+		CE563E066E8BB988D558A8E0 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE1FD7AD8AE8285DD5B4A02 /* Metal.framework */; };
+		D8C6571F430A075F2C8368C3 /* libapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B42D6D9E64710B99DA7568EF /* libapp.a */; };
+		E07B59C2C8BAA8DFF049F80C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9CE4873E363B4285CA0A1AE /* Security.framework */; };
+		E99F474CBA081F693968C9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953220A76DC2F6C6A89D90C4 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		141444015346EAD447F2A8D3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1DE1FD7AD8AE8285DD5B4A02 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		28196E99E17FA2298E4FB498 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = SOURCE_ROOT; };
+		53EF7E04E7B88B03DC8F756C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		630EA882C70A15F479EBC419 /* bindings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bindings.h; sourceTree = "<group>"; };
+		6960DBBED2017E0B6F7B9894 /* thetictacminigame_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = thetictacminigame_iOS.entitlements; sourceTree = "<group>"; };
+		6EAAF4886A7628ADECD2D7DD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		768DD8893A09C1666FA86863 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		953220A76DC2F6C6A89D90C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A06EE552F38F3225327291FC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AE51E85681EB5CCF7ED0D977 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		B42D6D9E64710B99DA7568EF /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
+		B9E405BC0BE98847C57F5CD3 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		BA5B328B68A9444FD670AEFA /* thetictacminigame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thetictacminigame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C83754D2F67EBAEE43115AFA /* main.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.rs; sourceTree = "<group>"; };
+		D4E8D18BF34B638D1A00D80C /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
+		D86920C4B00C26DA1CF8F495 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E43D3DA6450BC799EA4919FC /* lib.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = lib.rs; sourceTree = "<group>"; };
+		E9CE4873E363B4285CA0A1AE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D4EB3A95C2B7C2E9414AAAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8C6571F430A075F2C8368C3 /* libapp.a in Frameworks */,
+				201C7307E6A19D0CF3A86635 /* CoreGraphics.framework in Frameworks */,
+				CE563E066E8BB988D558A8E0 /* Metal.framework in Frameworks */,
+				ADF7A2170814F93C4B5D3B03 /* MetalKit.framework in Frameworks */,
+				C8B844DA1423718A26AF08AA /* QuartzCore.framework in Frameworks */,
+				E07B59C2C8BAA8DFF049F80C /* Security.framework in Frameworks */,
+				4058B058CB08D56722B367D9 /* UIKit.framework in Frameworks */,
+				A740EAA52424DE59752B8F91 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22133080C9E1855DB1FC7A2C /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				3104438A5E7A60B0D0E19460 /* arm64 */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		2E38E24EEE537979AC46BCE8 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				705B32050892EBDD0E2A96B2 /* thetictacminigame */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		3104438A5E7A60B0D0E19460 /* arm64 */ = {
+			isa = PBXGroup;
+			children = (
+				E6B4ED9CDAEE38632CB5403E /* debug */,
+			);
+			path = arm64;
+			sourceTree = "<group>";
+		};
+		5820A75CD31FA96E499CC74B /* bindings */ = {
+			isa = PBXGroup;
+			children = (
+				630EA882C70A15F479EBC419 /* bindings.h */,
+			);
+			path = bindings;
+			sourceTree = "<group>";
+		};
+		705B32050892EBDD0E2A96B2 /* thetictacminigame */ = {
+			isa = PBXGroup;
+			children = (
+				768DD8893A09C1666FA86863 /* main.mm */,
+				5820A75CD31FA96E499CC74B /* bindings */,
+			);
+			path = thetictacminigame;
+			sourceTree = "<group>";
+		};
+		7711A56DC516551EE6936CBD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				141444015346EAD447F2A8D3 /* CoreGraphics.framework */,
+				B42D6D9E64710B99DA7568EF /* libapp.a */,
+				1DE1FD7AD8AE8285DD5B4A02 /* Metal.framework */,
+				B9E405BC0BE98847C57F5CD3 /* MetalKit.framework */,
+				D86920C4B00C26DA1CF8F495 /* QuartzCore.framework */,
+				E9CE4873E363B4285CA0A1AE /* Security.framework */,
+				6EAAF4886A7628ADECD2D7DD /* UIKit.framework */,
+				AE51E85681EB5CCF7ED0D977 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88B65FEA99DE9AF72E91E2D8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA5B328B68A9444FD670AEFA /* thetictacminigame.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		911E82D9213C1D565D544AAC = {
+			isa = PBXGroup;
+			children = (
+				28196E99E17FA2298E4FB498 /* assets */,
+				953220A76DC2F6C6A89D90C4 /* Assets.xcassets */,
+				A06EE552F38F3225327291FC /* LaunchScreen.storyboard */,
+				22133080C9E1855DB1FC7A2C /* Externals */,
+				2E38E24EEE537979AC46BCE8 /* Sources */,
+				AE3AEC219CF056EEE48F41F5 /* src */,
+				B99BEC52CD9AB226754C8B1F /* thetictacminigame_iOS */,
+				7711A56DC516551EE6936CBD /* Frameworks */,
+				88B65FEA99DE9AF72E91E2D8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AE3AEC219CF056EEE48F41F5 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E43D3DA6450BC799EA4919FC /* lib.rs */,
+				C83754D2F67EBAEE43115AFA /* main.rs */,
+			);
+			name = src;
+			path = ../../src;
+			sourceTree = "<group>";
+		};
+		B99BEC52CD9AB226754C8B1F /* thetictacminigame_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				53EF7E04E7B88B03DC8F756C /* Info.plist */,
+				6960DBBED2017E0B6F7B9894 /* thetictacminigame_iOS.entitlements */,
+			);
+			path = thetictacminigame_iOS;
+			sourceTree = "<group>";
+		};
+		E6B4ED9CDAEE38632CB5403E /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				D4E8D18BF34B638D1A00D80C /* libapp.a */,
+			);
+			path = debug;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8F97607DF97E7D38F07F5E28 /* thetictacminigame_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6B11B208635B0C568D37D96 /* Build configuration list for PBXNativeTarget "thetictacminigame_iOS" */;
+			buildPhases = (
+				CF273A839DC6042D94F3F040 /* Build Rust Code */,
+				28B678AF2767629610C05EA9 /* Sources */,
+				3E17CF7AFF84B7BD7CCF6A77 /* Resources */,
+				1D4EB3A95C2B7C2E9414AAAF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = thetictacminigame_iOS;
+			packageProductDependencies = (
+			);
+			productName = thetictacminigame_iOS;
+			productReference = BA5B328B68A9444FD670AEFA /* thetictacminigame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8152E35CEDE2E9DD61F7BE36 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = CB9305C902456F958C7489F9 /* Build configuration list for PBXProject "thetictacminigame" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 911E82D9213C1D565D544AAC;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 88B65FEA99DE9AF72E91E2D8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8F97607DF97E7D38F07F5E28 /* thetictacminigame_iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3E17CF7AFF84B7BD7CCF6A77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E99F474CBA081F693968C9F1 /* Assets.xcassets in Resources */,
+				51DCB0B717D75FFAEF11DB76 /* LaunchScreen.storyboard in Resources */,
+				374C5264962A119693FD526B /* assets in Resources */,
+				34A89C7DFDAC09E284AABBAD /* libapp.a in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CF273A839DC6042D94F3F040 /* Build Rust Code */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Rust Code";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Externals/x86_64/${CONFIGURATION}/libapp.a",
+				"$(SRCROOT)/Externals/arm64/${CONFIGURATION}/libapp.a",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "pnpm tauri ios xcode-script -v --platform ${PLATFORM_DISPLAY_NAME:?} --sdk-root ${SDKROOT:?} --framework-search-paths \"${FRAMEWORK_SEARCH_PATHS:?}\" --header-search-paths \"${HEADER_SEARCH_PATHS:?}\" --gcc-preprocessor-definitions \"${GCC_PREPROCESSOR_DEFINITIONS:-}\" --configuration ${CONFIGURATION:?} ${FORCE_COLOR} ${ARCHS:?}";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28B678AF2767629610C05EA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5609D0CD48BD0A180E6B7D4B /* main.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		16D81DE2F5A0DC5C92C01C3F /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = thetictacminigame_iOS/thetictacminigame_iOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = HGBDTDLF34;
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = x86_64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = thetictacminigame_iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kentonbell.thetictacminigame;
+				PRODUCT_NAME = "thetictacminigame";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
+			};
+			name = debug;
+		};
+		2640CD1B767671A797F45889 /* release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = thetictacminigame_iOS/thetictacminigame_iOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = HGBDTDLF34;
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = x86_64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = thetictacminigame_iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kentonbell.thetictacminigame;
+				PRODUCT_NAME = "thetictacminigame";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
+			};
+			name = release;
+		};
+		2D2926F453B7362D04D6EEBF /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = debug;
+		};
+		FCF9DDB09340822DBF5A631C /* release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB9305C902456F958C7489F9 /* Build configuration list for PBXProject "thetictacminigame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D2926F453B7362D04D6EEBF /* debug */,
+				FCF9DDB09340822DBF5A631C /* release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = debug;
+		};
+		F6B11B208635B0C568D37D96 /* Build configuration list for PBXNativeTarget "thetictacminigame_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16D81DE2F5A0DC5C92C01C3F /* debug */,
+				2640CD1B767671A797F45889 /* release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8152E35CEDE2E9DD61F7BE36 /* Project object */;
+}
