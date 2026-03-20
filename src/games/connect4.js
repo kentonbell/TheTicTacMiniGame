@@ -1,7 +1,5 @@
 // Connect 4 Mini Game
 
-import { checkConnect4Win } from './utils.js';
-
 export function initConnect4(completeMiniGame) {
   const gameContainer = document.getElementById("minigame-connect4");
   gameContainer.classList.remove("hidden");
@@ -65,4 +63,63 @@ export function initConnect4(completeMiniGame) {
     b.onclick = () => window.dropPieceC4(i);
   });
   renderConnect4Board();
+}
+
+function checkConnect4Win(board) {
+  const rows = board.length;
+  const cols = board[0].length;
+
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols - 3; col++) {
+      if (
+        board[row][col] !== "N" &&
+        board[row][col] === board[row][col + 1] &&
+        board[row][col] === board[row][col + 2] &&
+        board[row][col] === board[row][col + 3]
+      ) {
+        return board[row][col];
+      }
+    }
+  }
+
+  for (let row = 0; row < rows - 3; row++) {
+    for (let col = 0; col < cols; col++) {
+      if (
+        board[row][col] !== "N" &&
+        board[row][col] === board[row + 1][col] &&
+        board[row][col] === board[row + 2][col] &&
+        board[row][col] === board[row + 3][col]
+      ) {
+        return board[row][col];
+      }
+    }
+  }
+
+  for (let row = 0; row < rows - 3; row++) {
+    for (let col = 0; col < cols - 3; col++) {
+      if (
+        board[row][col] !== "N" &&
+        board[row][col] === board[row + 1][col + 1] &&
+        board[row][col] === board[row + 2][col + 2] &&
+        board[row][col] === board[row + 3][col + 3]
+      ) {
+        return board[row][col];
+      }
+    }
+  }
+
+  for (let row = 0; row < rows - 3; row++) {
+    for (let col = 3; col < cols; col++) {
+      if (
+        board[row][col] !== "N" &&
+        board[row][col] === board[row + 1][col - 1] &&
+        board[row][col] === board[row + 2][col - 2] &&
+        board[row][col] === board[row + 3][col - 3]
+      ) {
+        return board[row][col];
+      }
+    }
+  }
+
+  return null;
 }

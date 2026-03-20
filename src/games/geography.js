@@ -1,6 +1,6 @@
 // Geography Mini Game
 
-import { dictionaries, gameState } from './state.js';
+import { dictionaries, gameState } from '../game-utils/state.js';
 
 export function initGeography(completeMiniGame) {
   const gameContainer = document.getElementById("minigame-geography");

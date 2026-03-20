@@ -1,6 +1,6 @@
 // Math Mini Game
 
-import { gameState } from './state.js';
+import { gameState } from '../game-utils/state.js';
 
 export function initMath(completeMiniGame) {
   const gameContainer = document.getElementById("minigame-math");

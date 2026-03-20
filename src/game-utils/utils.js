@@ -8,7 +8,23 @@ export function getTitleCase(str) {
 }
 
 export function showAlert(title, message) {
-  alert(`${title}\n\n${message}`);
+  const alertEl = document.getElementById("app-alert");
+  if (!alertEl) {
+    window.alert(`${title}\n\n${message}`);
+    return;
+  }
+
+  alertEl.innerHTML = `
+    <strong style="font-size: 1.1em; display: block; margin-bottom: 12px;">${title}</strong>
+    <p style="white-space: pre-line; font-size: 0.95em; margin-bottom: 14px;">${message}</p>
+    <button id="app-alert-close">OK</button>
+  `;
+
+  alertEl.classList.remove("hidden");
+  document.getElementById("app-alert-close").addEventListener("click", () => {
+    alertEl.classList.add("hidden");
+    alertEl.innerHTML = "";
+  });
 }
 
 export function showHowToPlay(gameName) {
@@ -78,118 +94,4 @@ export function shuffleWord(word) {
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   return arr.join("");
-}
-
-export function getWordleFeedback(guess, target) {
-  const feedback = new Array(5).fill("grey");
-  const targetChars = target.split("");
-  const guessChars = guess.split("");
-
-  for (let i = 0; i < 5; i++) {
-    if (guessChars[i] === targetChars[i]) {
-      feedback[i] = "green";
-      targetChars[i] = null;
-      guessChars[i] = null;
-    }
-  }
-
-  for (let i = 0; i < 5; i++) {
-    if (guessChars[i] !== null && targetChars.includes(guessChars[i])) {
-      feedback[i] = "yellow";
-      targetChars[targetChars.indexOf(guessChars[i])] = null;
-    }
-  }
-
-  return feedback;
-}
-
-export function checkConnect4Win(board) {
-  const rows = board.length;
-  const cols = board[0].length;
-
-  for (let row = 0; row < rows; row++) {
-    for (let col = 0; col < cols - 3; col++) {
-      if (
-        board[row][col] !== "N" &&
-        board[row][col] === board[row][col + 1] &&
-        board[row][col] === board[row][col + 2] &&
-        board[row][col] === board[row][col + 3]
-      ) {
-        return board[row][col];
-      }
-    }
-  }
-
-  for (let row = 0; row < rows - 3; row++) {
-    for (let col = 0; col < cols; col++) {
-      if (
-        board[row][col] !== "N" &&
-        board[row][col] === board[row + 1][col] &&
-        board[row][col] === board[row + 2][col] &&
-        board[row][col] === board[row + 3][col]
-      ) {
-        return board[row][col];
-      }
-    }
-  }
-
-  for (let row = 0; row < rows - 3; row++) {
-    for (let col = 0; col < cols - 3; col++) {
-      if (
-        board[row][col] !== "N" &&
-        board[row][col] === board[row + 1][col + 1] &&
-        board[row][col] === board[row + 2][col + 2] &&
-        board[row][col] === board[row + 3][col + 3]
-      ) {
-        return board[row][col];
-      }
-    }
-  }
-
-  for (let row = 0; row < rows - 3; row++) {
-    for (let col = 3; col < cols; col++) {
-      if (
-        board[row][col] !== "N" &&
-        board[row][col] === board[row + 1][col - 1] &&
-        board[row][col] === board[row + 2][col - 2] &&
-        board[row][col] === board[row + 3][col - 3]
-      ) {
-        return board[row][col];
-      }
-    }
-  }
-
-  return null;
-}
-
-export function checkMiniWinner(board) {
-  for (let row of board) {
-    if (row[0] !== "N" && row.every((cell) => cell === row[0])) return row[0];
-  }
-
-  for (let col = 0; col < 3; col++) {
-    if (
-      board[0][col] !== "N" &&
-      board.every((row) => row[col] === board[0][col])
-    )
-      return board[0][col];
-  }
-
-  if (
-    board[0][0] !== "N" &&
-    board.every((_, i) => board[i][i] === board[0][0])
-  )
-    return board[0][0];
-
-  if (
-    board[0][2] !== "N" &&
-    board.every((_, i) => board[i][2 - i] === board[0][2])
-  )
-    return board[0][2];
-
-  return null;
-}
-
-export function isMiniBoardFull(board) {
-  return board.every((row) => row.every((cell) => cell !== "N"));
 }

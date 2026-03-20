@@ -11,9 +11,12 @@
     <!-- Welcome Screen -->
     <div id="welcome-screen" class="screen">
       <div class="welcome-content">
+        <button id="settings-btn-welcome" class="btn-secondary">⚙️</button>
         <h1 class="title-gradient">The Tic-Tac Mini Game</h1>
         <p class="subtitle">Win the games within the game</p>
-        
+        <div class="header-buttons" style="justify-content: center; gap: 10px; margin-bottom: 14px;">
+      <!-- Old settings spot -->
+        </div>
         <div class="setup-section">
           <div class="form-group">
             <label for="player-count">Number of Players</label>
@@ -265,6 +268,9 @@
       </div>
     </div>
 
+    <!-- App Alert Overlay -->
+    <div id="app-alert" class="app-alert hidden" aria-live="polite"></div>
+
     <!-- Game Over Screen -->
     <div id="gameover-screen" class="screen hidden">
       <div class="gameover-content">
@@ -288,6 +294,6 @@
     </div>
   </div>
 
-  <script src="main.js"></script>
+  <script type="module" src="main.js"></script>
 </body>
 </html>

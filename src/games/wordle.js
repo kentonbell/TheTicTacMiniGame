@@ -1,13 +1,12 @@
 // Wordle Mini Game
 
-import { getWordleFeedback } from './utils.js';
-import { dictionaries, gameState } from './state.js';
+import { dictionaries, gameState } from '../game-utils/state.js';
 
 export function initWordle(completeMiniGame) {
   const gameContainer = document.getElementById("minigame-wordle");
   gameContainer.classList.remove("hidden");
 
-  const words = dictionaries["wordle"] || ["SWIFT", "TAURI", "HELLO", "WORLD", "RUST"];
+  const words = dictionaries["wordle"];
   const targetWord = words[Math.floor(Math.random() * words.length)];
   let attemptsLeft = 6;
   let currentGuess = "";
@@ -84,4 +83,27 @@ export function initWordle(completeMiniGame) {
     inputEl.value = "";
     currentGuess = "";
   }
+}
+
+function getWordleFeedback(guess, target) {
+  const feedback = new Array(5).fill("grey");
+  const targetChars = target.split("");
+  const guessChars = guess.split("");
+
+  for (let i = 0; i < 5; i++) {
+    if (guessChars[i] === targetChars[i]) {
+      feedback[i] = "green";
+      targetChars[i] = null;
+      guessChars[i] = null;
+    }
+  }
+
+  for (let i = 0; i < 5; i++) {
+    if (guessChars[i] !== null && targetChars.includes(guessChars[i])) {
+      feedback[i] = "yellow";
+      targetChars[targetChars.indexOf(guessChars[i])] = null;
+    }
+  }
+
+  return feedback;
 }

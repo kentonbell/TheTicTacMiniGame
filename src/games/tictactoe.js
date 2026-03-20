@@ -1,7 +1,5 @@
 // Tic-Tac-Toe Mini Game
 
-import { checkMiniWinner, isMiniBoardFull } from './utils.js';
-
 export function initMiniTicTacToe(completeMiniGame) {
   const boardElement = document.getElementById("mini-board-tictactoe");
   const gameContainer = document.getElementById("minigame-tictactoe");
@@ -55,4 +53,36 @@ export function initMiniTicTacToe(completeMiniGame) {
       renderMiniBoard();
     }
   }
+}
+
+function checkMiniWinner(board) {
+  for (let row of board) {
+    if (row[0] !== "N" && row.every((cell) => cell === row[0])) return row[0];
+  }
+
+  for (let col = 0; col < 3; col++) {
+    if (
+      board[0][col] !== "N" &&
+      board.every((row) => row[col] === board[0][col])
+    )
+      return board[0][col];
+  }
+
+  if (
+    board[0][0] !== "N" &&
+    board.every((_, i) => board[i][i] === board[0][0])
+  )
+    return board[0][0];
+
+  if (
+    board[0][2] !== "N" &&
+    board.every((_, i) => board[i][2 - i] === board[0][2])
+  )
+    return board[0][2];
+
+  return null;
+}
+
+function isMiniBoardFull(board) {
+  return board.every((row) => row.every((cell) => cell !== "N"));
 }

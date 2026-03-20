@@ -1,6 +1,6 @@
 // Dots and Boxes Mini Game
 
-import { gameState } from './state.js';
+import { gameState } from '../game-utils/state.js';
 
 export function initDotsAndBoxes(completeMiniGame) {
   const gameContainer = document.getElementById("minigame-dotsboxes");

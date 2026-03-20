@@ -25,15 +25,16 @@ body {
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   color: #ffffff;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .app-container {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
 .screen {
@@ -299,25 +300,27 @@ body {
 
 .game-board {
   display: grid;
-  gap: 12px;
-  padding: 30px;
+  gap: 10px;
+  padding: 20px;
   backdrop-filter: blur(20px);
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: 25px;
   box-shadow: var(--shadow-lg);
+  width: min(100%, 95vw, 650px);
+  max-width: 95vw;
 }
 
 .game-board.size-3 {
-  grid-template-columns: repeat(3, 100px);
+  grid-template-columns: repeat(3, minmax(60px, 1fr));
 }
 
 .game-board.size-4 {
-  grid-template-columns: repeat(4, 85px);
+  grid-template-columns: repeat(4, minmax(55px, 1fr));
 }
 
 .game-board.size-5 {
-  grid-template-columns: repeat(5, 75px);
+  grid-template-columns: repeat(5, minmax(45px, 1fr));
 }
 
 .board-cell {
@@ -390,21 +393,39 @@ body {
   box-shadow: var(--shadow-md);
 }
 
-#quit-btn {
-  padding: 10px 20px;
-  font-size: 0.95em;
+#app-alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 260px;
+  max-width: 90vw;
+  background: rgba(17, 25, 52, 0.95);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 20px;
+  z-index: 1200;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
+  color: white;
+  text-align: center;
 }
 
-/* Mini Game Screen */
+#app-alert.hidden {
+  display: none;
+}
+
+#app-alert button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .mini-game-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 20px 30px;
-  backdrop-filter: blur(20px);
-  background: rgba(26, 26, 46, 0.9);
-  border-bottom: 1px solid var(--glass-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -634,6 +655,53 @@ input::placeholder {
   background: rgba(255, 107, 107, 0.2);
   color: #FF6B6B;
 }
+
+/* Responsive improvements */
+@media (max-width: 768px), (max-height: 700px) {
+  .welcome-content,
+  .mini-game,
+  .settings-content,
+  .gameover-content {
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+    max-width: 92vw;
+  }
+
+  .title-gradient {
+    font-size: 2rem;
+  }
+
+  .game-header {
+    padding: 12px 16px;
+  }
+
+  .score-display {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .game-board-container {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  .board-cell {
+    font-size: 1.6em;
+    border-radius: 10px;
+  }
+
+  .game-info {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    transform: none;
+    width: auto;
+    padding: 10px;
+    font-size: 0.95em;
+  }
+}
+
 
 .feedback-yellow {
   background: rgba(255, 230, 109, 0.2);

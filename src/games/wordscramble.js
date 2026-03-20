@@ -1,13 +1,13 @@
 // Word Scramble Mini Game
 
-import { shuffleWord } from './utils.js';
-import { dictionaries, gameState } from './state.js';
+import { shuffleWord } from '../game-utils/utils.js';
+import { dictionaries, gameState } from '../game-utils/state.js';
 
 export function initWordScramble(completeMiniGame) {
   const gameContainer = document.getElementById("minigame-wordscramble");
   gameContainer.classList.remove("hidden");
 
-  const words = dictionaries["1000topwords"] || dictionaries["wordle"] || ["TAURI", "SWIFT", "RUST"];
+  const words = dictionaries["1000topwords"];
   
   let wordIndex = 0;
   let wordsFound = 0;
