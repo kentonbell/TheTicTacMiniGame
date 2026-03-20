@@ -26,6 +26,7 @@
 		141444015346EAD447F2A8D3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1DE1FD7AD8AE8285DD5B4A02 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		28196E99E17FA2298E4FB498 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = SOURCE_ROOT; };
+		4BE5951536BC12D594713E4A /* games.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = games.rs; sourceTree = "<group>"; };
 		53EF7E04E7B88B03DC8F756C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		630EA882C70A15F479EBC419 /* bindings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bindings.h; sourceTree = "<group>"; };
 		6960DBBED2017E0B6F7B9894 /* thetictacminigame_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = thetictacminigame_iOS.entitlements; sourceTree = "<group>"; };
@@ -33,6 +34,7 @@
 		768DD8893A09C1666FA86863 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		953220A76DC2F6C6A89D90C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A06EE552F38F3225327291FC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A46B050598DCAF8BF33F49D1 /* state.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = state.rs; sourceTree = "<group>"; };
 		AE51E85681EB5CCF7ED0D977 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B42D6D9E64710B99DA7568EF /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
 		B9E405BC0BE98847C57F5CD3 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
@@ -145,8 +147,10 @@
 		AE3AEC219CF056EEE48F41F5 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				4BE5951536BC12D594713E4A /* games.rs */,
 				E43D3DA6450BC799EA4919FC /* lib.rs */,
 				C83754D2F67EBAEE43115AFA /* main.rs */,
+				A46B050598DCAF8BF33F49D1 /* state.rs */,
 			);
 			name = src;
 			path = ../../src;

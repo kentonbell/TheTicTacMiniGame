@@ -12,7 +12,7 @@
     <div id="welcome-screen" class="screen">
       <div class="welcome-content">
         <h1 class="title-gradient">The Tic-Tac Mini Game</h1>
-        <p class="subtitle">Win the game within the game</p>
+        <p class="subtitle">Win the games within the game</p>
         
         <div class="setup-section">
           <div class="form-group">
@@ -47,6 +47,11 @@
             <input type="text" id="player-name" placeholder="Enter your name" value="Player 1">
           </div>
 
+          <div class="form-group" id="player-name-2-group" style="display: none;">
+            <label for="player-name-2">Player 2 Name</label>
+            <input type="text" id="player-name-2" placeholder="Enter player 2 name" value="Player 2">
+          </div>
+
           <button id="start-game-btn" class="btn-primary btn-large">Start Game</button>
         </div>
       </div>
@@ -69,7 +74,10 @@
             </div>
           </div>
         </div>
-        <button id="quit-btn" class="btn-secondary">Quit Game</button>
+        <div class="header-buttons">
+          <button id="settings-btn" class="btn-secondary">⚙️ Settings</button>
+          <button id="quit-btn" class="btn-secondary">Quit Game</button>
+        </div>
       </div>
 
       <div class="game-board-container">
@@ -84,7 +92,7 @@
     <!-- Mini Game Screen -->
     <div id="mini-game-screen" class="screen hidden">
       <div class="mini-game-header">
-        <button id="back-from-minigame" class="btn-secondary">Back</button>
+        <button id="back-from-minigame" class="btn-secondary">Forfeit</button>
         <h2 id="mini-game-title">Mini Game</h2>
         <div id="mini-game-info"></div>
       </div>
@@ -98,7 +106,14 @@
       <div id="minigame-wordle" class="mini-game hidden">
         <div class="wordle-container">
           <p id="wordle-hint">Guess the 5-letter word!</p>
-          <div id="wordle-feedback"></div>
+          <div id="wordle-feedback">
+            <div class="wordle-row"><div class="wordle-cell"></div><div class="wordle-cell"></div><div class="wordle-cell"></div><div class="wordle-cell"></div><div class="wordle-cell"></div></div>
+            <div class="wordle-row"><div class="wordle-cell"></div><div class="wordle-cell"></div><div class="wordle-cell"></div><div class="wordle-cell"></div><div class="wordle-cell"></div></div>
+            <div class="wordle-row"><div class="wordle-cell"></div><div class="wordle-cell"></div><div class="wordle-cell"></div><div class="wordle-cell"></div><div class="wordle-cell"></div></div>
+            <div class="wordle-row"><div class="wordle-cell"></div><div class="wordle-cell"></div><div class="wordle-cell"></div><div class="wordle-cell"></div><div class="wordle-cell"></div></div>
+            <div class="wordle-row"><div class="wordle-cell"></div><div class="wordle-cell"></div><div class="wordle-cell"></div><div class="wordle-cell"></div><div class="wordle-cell"></div></div>
+            <div class="wordle-row"><div class="wordle-cell"></div><div class="wordle-cell"></div><div class="wordle-cell"></div><div class="wordle-cell"></div><div class="wordle-cell"></div></div>
+          </div>
           <input type="text" id="wordle-input" placeholder="Enter a 5-letter word" maxlength="5">
           <button id="wordle-submit" class="btn-primary">Guess</button>
           <p id="wordle-status"></p>
@@ -139,13 +154,13 @@
         <div class="connect4-container">
           <div id="connect4-board" class="connect4-board"></div>
           <div class="connect4-controls">
-            <button class="drop-btn" type="button" onclick="dropPiece(0)">↓</button>
-            <button class="drop-btn" type="button" onclick="dropPiece(1)">↓</button>
-            <button class="drop-btn" type="button" onclick="dropPiece(2)">↓</button>
-            <button class="drop-btn" type="button" onclick="dropPiece(3)">↓</button>
-            <button class="drop-btn" type="button" onclick="dropPiece(4)">↓</button>
-            <button class="drop-btn" type="button" onclick="dropPiece(5)">↓</button>
-            <button class="drop-btn" type="button" onclick="dropPiece(6)">↓</button>
+            <button class="drop-btn" type="button" onclick="window.dropPieceC4(0)">↓</button>
+            <button class="drop-btn" type="button" onclick="window.dropPieceC4(1)">↓</button>
+            <button class="drop-btn" type="button" onclick="window.dropPieceC4(2)">↓</button>
+            <button class="drop-btn" type="button" onclick="window.dropPieceC4(3)">↓</button>
+            <button class="drop-btn" type="button" onclick="window.dropPieceC4(4)">↓</button>
+            <button class="drop-btn" type="button" onclick="window.dropPieceC4(5)">↓</button>
+            <button class="drop-btn" type="button" onclick="window.dropPieceC4(6)">↓</button>
           </div>
         </div>
       </div>
@@ -167,6 +182,86 @@
           <div class="trivia-options" id="trivia-options"></div>
           <p id="trivia-status"></p>
         </div>
+      </div>
+
+      <!-- Spelling Bee Mini Game -->
+      <div id="minigame-spellingbee" class="mini-game hidden">
+        <div class="spellingbee-container">
+          <p id="spellingbee-word"></p>
+          <input type="text" id="spellingbee-input" placeholder="Spell the word">
+          <button id="spellingbee-submit" class="btn-primary">Submit</button>
+          <p id="spellingbee-status"></p>
+        </div>
+      </div>
+
+      <!-- Higher or Lower Mini Game -->
+      <div id="minigame-higherlow" class="mini-game hidden">
+        <div class="higherlow-container">
+          <p id="higherlow-current">Current: ?</p>
+          <p id="higherlow-status"></p>
+        </div>
+      </div>
+
+      <!-- Guess Number Mini Game -->
+      <div id="minigame-guessnumber" class="mini-game hidden">
+        <div class="guessnumber-container">
+          <p>I'm thinking of a number from 1-10...</p>
+          <input type="number" id="guessnumber-input" placeholder="Guess a number" min="1" max="10">
+          <button id="guessnumber-submit" class="btn-primary">Guess</button>
+          <p id="guessnumber-status"></p>
+        </div>
+      </div>
+
+      <!-- Coin Flip Mini Game -->
+      <div id="minigame-coinflip" class="mini-game hidden">
+        <div class="coinflip-container">
+          <div id="coin-display" style="font-size: 4em; text-align: center; margin: 2em; cursor: pointer;">🪙</div>
+          <div class="coinflip-buttons">
+            <button class="btn-primary" onclick="window.callCoinFlip('heads')">Heads</button>
+            <button class="btn-primary" onclick="window.callCoinFlip('tails')">Tails</button>
+          </div>
+          <p id="coinflip-status"></p>
+        </div>
+      </div>
+
+      <!-- Boggle Mini Game -->
+      <div id="minigame-boggle" class="mini-game hidden">
+        <div class="boggle-container">
+          <p id="boggle-board"></p>
+          <input type="text" id="boggle-input" placeholder="Type words...">
+          <button id="boggle-submit" class="btn-primary">Submit Word</button>
+          <p id="boggle-status"></p>
+          <p id="boggle-words">Words found: </p>
+        </div>
+      </div>
+
+      <!-- Anagrams Mini Game -->
+      <div id="minigame-anagrams" class="mini-game hidden">
+        <div class="anagrams-container">
+          <p id="anagrams-letters"></p>
+          <input type="text" id="anagrams-input" placeholder="Enter a word">
+          <button id="anagrams-submit" class="btn-primary">Submit</button>
+          <p id="anagrams-status"></p>
+          <p id="anagrams-found">Words: 0/3</p>
+        </div>
+      </div>
+
+      <!-- Filler Mini Game -->
+      <div id="minigame-filler" class="mini-game hidden">
+        <div class="filler-container">
+          <div id="filler-board" class="filler-board"></div>
+          <p id="filler-status"></p>
+          <div class="filler-colors" id="filler-colors"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings Screen -->
+    <div id="settings-screen" class="screen hidden">
+      <div class="settings-content">
+        <h2>Settings</h2>
+        <p>Settings coming soon...</p>
+        <button id="back-from-settings" class="btn-secondary btn-large">Back to Game</button>
       </div>
     </div>
 
