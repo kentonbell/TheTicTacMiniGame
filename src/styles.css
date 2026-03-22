@@ -427,6 +427,7 @@ body {
 
 .mini-game-header {
   display: flex;
+  flex-direction: column; 
   justify-content: space-between;
   align-items: center;
   gap: 20px;
@@ -436,6 +437,10 @@ body {
 .mini-game-header h2 {
   flex: 1;
   text-align: center;
+}
+
+.mini-game-header button {
+  align-self: flex-start; /* button top-left */
 }
 
 #mini-game-info {
