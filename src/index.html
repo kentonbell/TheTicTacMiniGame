@@ -67,17 +67,9 @@
             <span class="current-symbol" id="current-symbol-display"></span>
             <span id="current-player-display"></span>
           </span>
-          <div class="score-board">
-            <div class="score-item">
-              <span id="player-x-name">X</span>: <span id="player-x-score">0</span>
-            </div>
-            <div class="score-item">
-              <span id="player-o-name">O</span>: <span id="player-o-score">0</span>
-            </div>
-          </div>
         </div>
         <div class="header-buttons">
-          <button id="quit-btn" class="btn-secondary">Quit Game</button>
+          <button id="quit-btn" class="btn-secondary">Quit</button>
           <button id="settings-btn" class="btn-secondary">⚙️</button>
         </div>
       </div>
@@ -190,6 +182,7 @@
       <div id="minigame-spellingbee" class="mini-game hidden">
         <div class="spellingbee-container">
           <p id="spellingbee-word"></p>
+          <p id="spellingbee-strikes"></p>
           <input type="text" id="spellingbee-input" placeholder="Spell the word">
           <button id="spellingbee-submit" class="btn-primary">Submit</button>
           <p id="spellingbee-status"></p>
@@ -217,12 +210,12 @@
       <!-- Coin Flip Mini Game -->
       <div id="minigame-coinflip" class="mini-game hidden">
         <div class="coinflip-container">
-          <div id="coin-display" style="font-size: 4em; text-align: center; margin: 2em; cursor: pointer;">🪙</div>
-          <div class="coinflip-buttons">
-            <button class="btn-primary" onclick="window.callCoinFlip('heads')">Heads</button>
-            <button class="btn-primary" onclick="window.callCoinFlip('tails')">Tails</button>
+          <p id="coin-display">Call heads or tails!</p>
+          <div id="coinflip-options" style="display: block;">
+            <button onclick="callCoinFlip('heads')" class="btn-primary">Heads</button>
+            <button onclick="callCoinFlip('tails')" class="btn-primary">Tails</button>
           </div>
-          <p id="coinflip-status"></p>
+          <p id="coinflip-result"></p>
         </div>
       </div>
 

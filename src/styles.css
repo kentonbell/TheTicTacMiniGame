@@ -1,13 +1,13 @@
 :root {
-  --color-primary: #22311d;
-  --color-secondary: #93f1eb;
-  --color-accent: #f8efc5;
+  --color-primary: rgba(53, 81, 81, 0.894);
+  --color-secondary: rgba(104, 200, 144, 0.8);
+  --color-accent: rgba(248, 239, 197, 0.8);
   --color-dark: #1a1a2e;
-  --color-light: #d4c0c0;
-  --color-x: #686546;
+  --color-light: #6ba466;
+  --color-x: #b92f28;
   --color-o: #397773;
   --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-border: rgba(22, 151, 194, 0.2);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.2);
   --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.3);
@@ -22,7 +22,7 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background: linear-gradient(135deg, #1a2e26 0%, #163e3c 50%, #0f6055 100%);
   color: #ffffff;
   min-height: 100vh;
   overflow: auto;
@@ -148,13 +148,13 @@ body {
   background: rgba(255, 255, 255, 0.1);
   border-color: var(--color-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 8px 20px rgba(107, 255, 127, 0.123);
 }
 
 .player-btn.active, .size-btn.active, .difficulty-btn.active {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   border-color: transparent;
-  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 8px 25px rgba(107, 255, 124, 0.2);
 }
 
 #player-name {
@@ -193,12 +193,12 @@ body {
 .btn-primary {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   color: white;
-  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 8px 25px rgba(30, 170, 44, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(255, 107, 107, 0.5);
+  box-shadow: 0 12px 35px rgba(144, 255, 107, 0.5);
 }
 
 .btn-primary.btn-large {
@@ -296,6 +296,7 @@ body {
   align-items: center;
   justify-content: center;
   flex: 1;
+  padding: 0 20px;
 }
 
 .game-board {
@@ -307,8 +308,8 @@ body {
   border: 1px solid var(--glass-border);
   border-radius: 25px;
   box-shadow: var(--shadow-lg);
-  width: min(100%, 95vw, 650px);
-  max-width: 95vw;
+  width: fit-content;
+  max-width: calc(100vw - 40px);
 }
 
 .game-board.size-3 {
@@ -427,11 +428,19 @@ body {
 
 .mini-game-header {
   display: flex;
-  flex-direction: column; 
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
   z-index: 1000;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .mini-game-header {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 .mini-game-header h2 {
@@ -440,7 +449,7 @@ body {
 }
 
 .mini-game-header button {
-  align-self: flex-start; /* button top-left */
+  flex-shrink: 0;
 }
 
 #mini-game-info {
@@ -451,7 +460,6 @@ body {
 .mini-game {
   width: 90%;
   max-width: 600px;
-  margin-top: 100px;
   backdrop-filter: blur(20px);
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
@@ -465,17 +473,26 @@ body {
   display: none;
 }
 
+/* Mini game screen layout */
+#mini-game-screen {
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 20px;
+}
+
 .mini-board {
   display: grid;
-  grid-template-columns: repeat(3, 80px);
+  grid-template-columns: repeat(3, minmax(60px, 80px));
   gap: 10px;
   justify-content: center;
   margin-bottom: 30px;
+  max-width: 300px;
+  width: 100%;
 }
 
 .mini-cell {
-  width: 80px;
-  height: 80px;
+  width: 100%;
+  aspect-ratio: 1;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.05);
   border: 2px solid var(--glass-border);
@@ -483,7 +500,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2em;
+  font-size: clamp(1.5em, 4vw, 2em);
   font-weight: bold;
   transition: var(--transition);
 }
@@ -908,7 +925,14 @@ input::placeholder {
   }
 
   .connect4-board {
-    grid-template-columns: repeat(7, 40px);
+    grid-template-columns: repeat(7, 35px);
+    gap: 6px;
+    padding: 10px;
+  }
+  
+  .connect4-cell {
+    width: 35px;
+    height: 35px;
   }
 }
 

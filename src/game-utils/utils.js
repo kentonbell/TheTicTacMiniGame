@@ -49,12 +49,14 @@ export function showHowToPlay(gameName) {
 
 export async function loadDictionaries() {
   try {
-    const { dictionaries } = await import('./state.js');
+    const { dictionaries, dictionariesLoaded } = await import('./state.js');
     const files = [
       { name: "wordle", displayName: "wordle" },
       { name: "words", displayName: "words" },
       { name: "1000topwords", displayName: "1000topwords" },
+      { name: "1000topscrambledwords", displayName: "1000topscrambledwords" },
       { name: "3000topwords", displayName: "3000topwords" },
+      { name: "3000topscrambledwords", displayName: "3000topscrambledwords" },
       { name: "all countries", displayName: "all%20countries" },
       { name: "capitals", displayName: "capitals" },
       { name: "europe", displayName: "europe" },
@@ -80,6 +82,7 @@ export async function loadDictionaries() {
       }
     }
     console.log("Dictionaries loaded:", Object.keys(dictionaries));
+    dictionariesLoaded = true;
     return dictionaries;
   } catch (e) {
     console.error("Error loading dictionaries:", e);

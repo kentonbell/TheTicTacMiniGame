@@ -16,6 +16,7 @@ export let gameState = {
 
 export let miniGameState = null;
 export let dictionaries = {};
+export let dictionariesLoaded = false;
 
 export const gameList = [
   "tictactoe", "wordle", "geography", "wordscramble", "math", 

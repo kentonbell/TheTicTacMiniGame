@@ -32,6 +32,10 @@ export function initFiller(completeMiniGame) {
     if (color === "#FF6B6B") colorCount[color] = (colorCount[color] || 0) + 1;
     
     cell.onclick = () => {
+      if (cell.style.backgroundColor === "#FF6B6B") {
+        document.getElementById("filler-status").textContent = `That square was already filled! Click to fill.`;
+         return; // Already filled
+      }
       cell.style.backgroundColor = "#FF6B6B";
       colorCount["#FF6B6B"]++;
       

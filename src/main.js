@@ -88,10 +88,10 @@ function updateGameInfo() {
     symbolEl.className = `current-symbol ${symbol.toLowerCase()}`;
   }
 
-  document.getElementById("player-x-score").textContent = gameState.scores.X;
-  document.getElementById("player-o-score").textContent = gameState.scores.O;
-  document.getElementById("player-x-name").textContent = gameState.playerNames.X;
-  document.getElementById("player-o-name").textContent = gameState.playerNames.O;
+  //document.getElementById("player-x-score").textContent = gameState.scores.X;
+  //document.getElementById("player-o-score").textContent = gameState.scores.O;
+  //document.getElementById("player-x-name").textContent = gameState.playerNames.X;
+  //document.getElementById("player-o-name").textContent = gameState.playerNames.O;
 }
 
 function selectSquare(row, col) {

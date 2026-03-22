@@ -11,7 +11,7 @@ export function initBoggle(completeMiniGame) {
   
   const letters = "TRESGOLIN";
   const shuffled = shuffleWord(letters);
-  const validWords = dictionaries["1000topwords"] || dictionaries["wordle"] || [];
+  const validWords = dictionaries["words"] || [];
   let foundWords = [];
   const targetWords = 3;
   

@@ -1,6 +1,6 @@
 // Spelling Bee Mini Game
 
-import { dictionaries, gameState } from '../game-utils/state.js';
+import { dictionaries, gameState, dictionariesLoaded } from '../game-utils/state.js';
 
 export function initSpellingBee(completeMiniGame) {
   const gameContainer = document.getElementById("minigame-spellingbee");
@@ -8,7 +8,13 @@ export function initSpellingBee(completeMiniGame) {
   
   gameContainer.classList.remove("hidden");
   
-  const wordList = dictionaries["1000topwords"] || dictionaries["wordle"] || ["SPELLING", "DIFFICULT"];
+  if (!dictionariesLoaded) {
+    document.getElementById("spellingbee-word").textContent = "Loading dictionaries...";
+    setTimeout(() => initSpellingBee(completeMiniGame), 500);
+    return;
+  }
+  
+  const wordList = dictionaries["words"] || dictionaries["1000topwords"] || [];
   let wordLength = 3;
   let strikes = 0;
   

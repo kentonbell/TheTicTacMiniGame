@@ -8,6 +8,7 @@ export function initWordScramble(completeMiniGame) {
   gameContainer.classList.remove("hidden");
 
   const words = dictionaries["1000topwords"];
+  const scrambledWords = dictionaries["1000topscrambledwords"];
   
   let wordIndex = 0;
   let wordsFound = 0;

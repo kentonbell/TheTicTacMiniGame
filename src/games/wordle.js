@@ -83,7 +83,7 @@ export function initWordle(completeMiniGame) {
     inputEl.value = "";
     currentGuess = "";
   }
-}
+
 
 function getWordleFeedback(guess, target) {
   const feedback = new Array(5).fill("grey");
@@ -106,4 +106,5 @@ function getWordleFeedback(guess, target) {
   }
 
   return feedback;
+}
 }
