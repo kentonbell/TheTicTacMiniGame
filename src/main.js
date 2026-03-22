@@ -1,3 +1,16 @@
+/**
+ * This file, src/main.js, manages the flow of the game by handling various game-related functionalities.
+ * It initializes and updates the game state, renders the game board, and handles user interactions.
+ * The game state is stored in the gameState object and is used by functions in game-flow.js to manage the game flow.
+ * The game state is updated by functions such as initializeGame, resetGame, updatePlayerNameFields, and updateGameInfo.
+ * The showScreen function displays different screens in the game based on the provided screen name.
+ * The updatePlayerNameFields function updates the display of player name fields based on the player count.
+ * The main.js file also exposes functions globally for use in inline onclick handlers.
+ * The initializeGame function initializes the game state and updates the game UI.
+ * The resetGame function resets the game state.
+ * The selectSquare function starts the corresponding mini-game if the selected square is unplayed.
+ * The main.js file sets up event listeners for various buttons and elements in the game UI.
+ */
 // ==================== IMPORTS ====================
 import { gameState } from './game-utils/state.js';
 import {

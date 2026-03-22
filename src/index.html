@@ -7,6 +7,34 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Global SVG definitions -->
+  <svg width="0" height="0" style="position:absolute">
+  <defs>
+    <mask
+      id="squircle-mask"
+      maskUnits="objectBoundingBox"
+      maskContentUnits="objectBoundingBox"
+      mask-type="alpha">
+
+      <path
+        fill="white"
+        d="
+          M0.08,0
+          H0.92
+          C0.97,0 1,0.03 1,0.08
+          V0.92
+          C1,0.97 0.97,1 0.92,1
+          H0.08
+          C0.03,1 0,0.97 0,0.92
+          V0.08
+          C0,0.03 0.03,0 0.08,0
+          Z
+        "
+      />
+
+    </mask>
+  </defs>
+</svg>
   <div class="app-container">
     <!-- Welcome Screen -->
     <div id="welcome-screen" class="screen">

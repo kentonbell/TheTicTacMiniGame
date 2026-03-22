@@ -12,6 +12,7 @@
   --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.2);
   --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.3);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --squircle-radius: 20;
 }
 
 * {
@@ -61,6 +62,27 @@ body {
   }
 }
 
+/* =====================
+   TRUE SQUIRCLE
+   ===================== */
+
+.squircle {
+  border-radius: 0;
+  mask-image: url(#squircle-mask);
+  -webkit-mask-image: url(#squircle-mask);
+
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+
+  overflow: visible;
+}
+
+
+
+
 /* Welcome Screen */
 .welcome-content {
   width: 90%;
@@ -68,7 +90,7 @@ body {
   backdrop-filter: blur(20px);
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  border-radius: 30px;
+  border-radius: 40px; /* Increased border-radius from 30px to a more modern look */
   padding: 50px 40px;
   box-shadow: var(--shadow-lg);
   animation: slideUp 0.6s ease-out;
@@ -132,11 +154,38 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+
+/* Apply squircle mask to all relevant elements */
+.game-board,
+.board-cell,
+.player-btn,
+.size-btn,
+.difficulty-btn,
+.btn-primary,
+.btn-secondary,
+.settings-content,
+.gameover-content,
+input {
+  mask: url(#squircle-mask);
+  -webkit-mask: url(#squircle-mask);
+  border-radius: 0;
+}
+/* Apply mask-size to all relevant elements */
+.game-board,
+.board-cell,
+.player-btn,
+.size-btn,
+.difficulty-btn {
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+
 .player-btn, .size-btn, .difficulty-btn {
   padding: 15px 20px;
   font-size: 1em;
-  border: 2px solid var(--glass-border);
-  border-radius: 15px;
+  border: none; /* 2px solid var(--glass-border); */
+  box-shadow: inset 0 0 0 2px var(--glass-border);
+  border-radius: 10px; /* Moved to squircle */
   background: rgba(255, 255, 255, 0.05);
   color: white;
   cursor: pointer;
@@ -211,6 +260,8 @@ body {
   background: rgba(255, 255, 255, 0.1);
   color: white;
   border: 2px solid var(--glass-border);
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .btn-secondary:hover {
@@ -340,6 +391,11 @@ body {
   position: relative;
   overflow: hidden;
 }
+
+/* a debug tool */
+/* * {
+  outline: 1px solid red;
+} */
 
 .board-cell:hover:not(.played) {
   background: rgba(255, 255, 255, 0.1);
@@ -521,6 +577,24 @@ body {
   color: white;
   background: linear-gradient(135deg, var(--color-o) 0%, rgba(78, 205, 196, 0.8) 100%);
   border-color: var(--color-o);
+}
+
+#quit-btn {
+  padding: 10px 15px; 
+  font-size: 1em;
+  border: 2px solid var(--glass-border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.422);
+  cursor: pointer;
+  transition: var(--transition);
+  min-width: 50px;
+}
+
+#quit-btn:hover {
+  /* Remove the hover effect */
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.2);
 }
 
 /* Word games containers */
