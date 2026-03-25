@@ -2,6 +2,7 @@
 
 import { dictionaries, gameState, dictionariesLoaded } from '../game-utils/state.js';
 
+
 export function initSpellingBee(completeMiniGame) {
   const gameContainer = document.getElementById("minigame-spellingbee");
   if (!gameContainer) return;
