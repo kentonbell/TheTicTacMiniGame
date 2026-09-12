@@ -1,9 +1,22 @@
 :root {
-  --color-primary: rgba(53, 81, 81, 0.894);
+  /* --color-primary: rgba(53, 81, 81, 0.894);
   --color-secondary: rgba(104, 200, 144, 0.8);
   --color-accent: rgba(248, 239, 197, 0.8);
   --color-dark: #1a1a2e;
-  --color-light: #6ba466;
+  --color-light: #6ba466; */
+  /* PRIMARY BRAND COLORS */
+  --color-primary: #0f766e;     /* rich teal — main identity */
+  --color-secondary: #14b8a6;   /* vibrant teal — interactive elements */
+  --color-accent: #f59e0b;      /* warm gold accent — pops against teal */
+
+  /* SURFACE COLORS */
+  --color-dark: #0b1f24;        /* deep ocean slate */
+  --color-light: #d1faf5;       /* soft aqua highlight */
+
+  /* SUPPORT COLORS */
+  --color-muted: #164e63;       /* subdued blue-teal */
+  --color-border: rgba(20,184,166,0.25);
+
   --color-x: #b92f28;
   --color-o: #397773;
   --glass-bg: rgba(255, 255, 255, 0.1);
@@ -23,7 +36,12 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  background: linear-gradient(135deg, #1a2e26 0%, #163e3c 50%, #0f6055 100%);
+  background: linear-gradient(
+  135deg,
+  #061417 0%,
+  #0b2c2c 40%,
+  #0f766e 100%
+);
   color: #ffffff;
   min-height: 100vh;
   overflow: auto;
@@ -197,13 +215,17 @@ input {
   background: rgba(255, 255, 255, 0.1);
   border-color: var(--color-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(107, 255, 127, 0.123);
+  box-shadow:
+  0 10px 25px rgba(0, 0, 0, 0.35),
+  0 0 0 1px rgba(20, 184, 166, 0.15);
 }
 
 .player-btn.active, .size-btn.active, .difficulty-btn.active {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   border-color: transparent;
-  box-shadow: 0 8px 25px rgba(107, 255, 124, 0.2);
+  box-shadow:
+  0 10px 25px rgba(0, 0, 0, 0.35),
+  0 0 0 1px rgba(20, 184, 166, 0.15);
 }
 
 #player-name {
@@ -242,12 +264,16 @@ input {
 .btn-primary {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   color: white;
-  box-shadow: 0 8px 25px rgba(30, 170, 44, 0.3);
+  box-shadow:
+  0 10px 25px rgba(0, 0, 0, 0.35),
+  0 0 0 1px rgba(20, 184, 166, 0.15);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(144, 255, 107, 0.5);
+  box-shadow:
+  0 10px 25px rgba(0, 0, 0, 0.35),
+  0 0 0 1px rgba(20, 184, 166, 0.15);
 }
 
 .btn-primary.btn-large {
@@ -283,8 +309,11 @@ input {
   left: 0;
   right: 0;
   padding: 20px 30px;
-  backdrop-filter: blur(20px);
-  background: rgba(26, 26, 46, 0.8);
+  /* backdrop-filter: blur(20px);
+  background: rgba(26, 26, 46, 0.8); */
+  background: rgba(6, 20, 23, 0.75);
+  backdrop-filter: blur(12px);
+  /* border-bottom: 1px solid rgba(20,184,166,0.2); */
   border-bottom: 1px solid var(--glass-border);
   display: flex;
   justify-content: space-between;
