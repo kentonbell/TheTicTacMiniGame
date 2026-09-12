@@ -23,6 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-src/ExampleCode/TICTACSRC/JAVAsrc/*
+src/ExampleCode/TICTACSRC/JAVAsrc/
 
-src-tauri/target*
+src-tauri/target
